@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jogo da Velha P2P</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Jogo da Velha P2P</h1>
+  <div id="status">Aguardando conexão...</div>
+  <button id="createOffer">Criar Oferta</button>
+  <textarea id="offerText" placeholder="Sua oferta SDP e ICE candidates..." rows="5" readonly></textarea>
+  <br>
+  <textarea id="answerText" placeholder="Cole a oferta do amigo aqui..." rows="5"></textarea>
+  <button id="createAnswer">Criar Resposta</button>
+  <button id="sendAnswer">Enviar Resposta (copie e cole no amigo)</button>
+  <br>
+  <textarea id="receivedAnswer" placeholder="Cole a resposta do amigo aqui..." rows="5"></textarea>
+  <button id="connectFinal">Conectar!</button>
+
+  <h2>Chat</h2>
+  <div id="chatMessages" style="border: 1px solid #ccc; height: 100px; overflow-y: scroll; padding: 5px;"></div>
+  <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+  <button id="sendChat">Enviar</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
