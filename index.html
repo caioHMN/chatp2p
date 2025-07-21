@@ -1,27 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-  <title>Jogo da Velha P2P</title>
-  <link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8" />
+  <title>WebRTC Popup</title>
 </head>
 <body>
-  <h1>Jogo da Velha P2P</h1>
-  <div id="status">Aguardando conexão...</div>
+  <div id="status">Status: aguardando ação...</div>
+  
+  <h3>1. Gerar Oferta (Offer)</h3>
   <button id="createOffer">Criar Oferta</button>
-  <textarea id="offerText" placeholder="Sua oferta SDP e ICE candidates..." rows="5" readonly></textarea>
-  <br>
-  <textarea id="answerText" placeholder="Cole a oferta do amigo aqui..." rows="5"></textarea>
+  <textarea id="offerText" rows="4"></textarea>
+  
+  <h3>2. Gerar Resposta (Answer)</h3>
+  <textarea id="answerText" rows="4" placeholder="Cole aqui a SDP de offer"></textarea>
   <button id="createAnswer">Criar Resposta</button>
-  <button id="sendAnswer">Enviar Resposta (copie e cole no amigo)</button>
-  <br>
-  <textarea id="receivedAnswer" placeholder="Cole a resposta do amigo aqui..." rows="5"></textarea>
-  <button id="connectFinal">Conectar!</button>
-
-  <h2>Chat</h2>
-  <div id="chatMessages" style="border: 1px solid #ccc; height: 100px; overflow-y: scroll; padding: 5px;"></div>
-  <input type="text" id="chatInput" placeholder="Digite sua mensagem...">
+  <button id="sendAnswer">Copiar Resposta</button>
+  
+  <h3>3. Finalizar Conexão</h3>
+  <textarea id="receivedAnswer" rows="4" placeholder="Cole aqui a SDP de answer"></textarea>
+  <button id="connectFinal">Conectar</button>
+  
+  <h3>4. Chat</h3>
+  <div id="chatMessages" style="border:1px solid #ccc; height:150px; overflow:auto"></div>
+  <input id="chatInput" placeholder="Digite sua mensagem" />
   <button id="sendChat">Enviar</button>
-
-  <script src="popup.js"></script>
+  
+  <!-- NOVO: Reconexão ICE Restart -->
+  <h3>5. Reconectar (iceRestart)</h3>
+  <button id="reconnectBtn">Tentar Reconectar</button>
+  <textarea id="reconnectOfferText" rows="4" placeholder="Nova SDP com iceRestart"></textarea>
 </body>
+<script src="popup.js"></script>
 </html>
